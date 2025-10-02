@@ -1,0 +1,108 @@
+
+@keyframes animStar {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes animStar2 {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-25vh) translateX(10px);
+  }
+  50% {
+    transform: translateY(-50vh) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-75vh) translateX(15px);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(0px);
+  }
+}
+
+@keyframes animStar3 {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  33% {
+    transform: translateY(-33vh) translateX(-10px) scale(1.1);
+  }
+  66% {
+    transform: translateY(-66vh) translateX(20px) scale(0.9);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(0px) scale(1);
+  }
+}
+
+/* Base styles for star layers */
+#stars1, #stars2, #stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1; /* Place stars behind all content */
+  pointer-events: none; /* Allow clicks to pass through stars */
+}
+
+/* Stars Layer 1 (Smallest, Fastest) */
+#stars1 {
+  background: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent),
+    radial-gradient(1px 1px at 200px 50px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 240px 90px, #ccc, transparent);
+  background-repeat: repeat;
+  background-size: 300px 200px;
+  animation: animStar 30s linear infinite;
+}
+
+/* Stars Layer 2 (Medium, Slower) */
+#stars2 {
+  background: 
+    radial-gradient(1px 1px at 25px 25px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 50px 75px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 125px 25px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 175px 75px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 225px 125px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 275px 25px, rgba(255,255,255,0.8), transparent);
+  background-repeat: repeat;
+  background-size: 350px 250px;
+  animation: animStar2 50s linear infinite;
+  opacity: 0.6;
+}
+
+/* Stars Layer 3 (Largest, Slowest) */
+#stars3 {
+  background: 
+    radial-gradient(1px 1px at 75px 125px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 175px 25px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 225px 175px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 325px 75px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 375px 225px, rgba(255,255,255,0.1), transparent);
+  background-repeat: repeat;
+  background-size: 450px 350px;
+  animation: animStar3 70s linear infinite;
+  opacity: 0.4;
+}
+
+/* Optional: Add a dark background */
+body {
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
