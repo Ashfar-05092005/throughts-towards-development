@@ -1,0 +1,71 @@
+/* Footer Styles */
+.developer-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.footer-content {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.developer-credit {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Arial', sans-serif;
+}
+
+.developer-link {
+  color: #4ade80;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.developer-link:hover {
+  color: #22c55e;
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+  transform: translateY(-1px);
+}
+
+.developer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+  transition: width 0.3s ease;
+}
+
+.developer-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .developer-credit {
+    font-size: 0.8rem;
+  }
+  
+  .developer-footer {
+    padding: 8px 0;
+  }
+}
+
+/* Add some bottom padding to the main content to account for fixed footer */
+body {
+  padding-bottom: 60px;
+}

@@ -2,6 +2,7 @@ import AddPost from "./components/AddPost";
 import NotFound from "./components/NotFound";
 import PostList from "./components/PostList";
 import UpdatePost from "./components/UpdatePost";
+import Footer from "./components/Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import '../src/components/Background.css'
 const router = createBrowserRouter([
@@ -21,6 +22,7 @@ function App() {
       <div id="stars3"></div>
       
       <RouterProvider router={router} />
+      <Footer />
     </>
   )
 }
